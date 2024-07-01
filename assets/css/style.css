@@ -1,0 +1,223 @@
+@font-face {
+    font-family: PokemonClassic;
+    src: url(/assets/fond/PokemonClassic.ttf);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: black;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px black;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked+.slider+.background {
+    background: #242424;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* fin du switch game*/
+
+body {
+    margin: 0;
+    font-family: PokemonClassic;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
+    max-height: 98vh;
+    background-color: white;
+    color: black;
+}
+
+header {
+    background-color: aquamarine;
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+footer h2 {
+    text-align: center;
+}
+.grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.line {
+    display: flex;
+    flex-direction: row;
+}
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+#btnReplay:hover {
+    background-color: aquamarine;
+}
+#btnReplay {
+    background-color: aqua;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 82vh;
+}
+#pvp{
+    display: inline-block;
+    color: black;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#pve{
+    display: inline-block;
+    color: black;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: none;
+}
+#btnPlay {
+    display: inline-block;
+    color: black;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+   
+}
+#message {
+    color: black;
+    margin: 0;
+    position: absolute;
+    bottom: 20vh;
+    left: 45%;
+}
+
+
+#morbionContainer.show {
+    display: block;
+}
+
+.grid.connect {
+    border-radius: 10px;
+}
+.grid.connect .cell{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.grid.connect .cell {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.grid.connect .cell:hover {
+    background-color: #f0f0f0;
+
+}
+.grid.connect .cell[data-player="X"] {
+    background-color: #f10f0f;
+    color: #f10f0f;
+    font-size: 1px;
+
+}
+.grid.connect .cell[data-player="O"] {
+    background-color: #f1c40f;
+    color: #f1c40f;
+    font-size: 1px;
+}
